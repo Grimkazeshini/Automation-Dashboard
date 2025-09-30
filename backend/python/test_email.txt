@@ -1,0 +1,11 @@
+From: john.doe@example.com
+To: admin@company.com
+Subject: Test Email for Dashboard
+Date: Tue, 30 Sep 2024 10:00:00 -0000
+
+Hello,
+
+This is a test email to verify the email parsing functionality.
+
+Best regards,
+John Doe

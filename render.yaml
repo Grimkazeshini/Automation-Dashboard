@@ -1,0 +1,26 @@
+services:
+  # Node.js API Service
+  - type: web
+    name: automation-dashboard-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: cd backend/api && npm install
+    startCommand: cd backend/api && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://your-frontend-url.vercel.app
+      - key: DATABASE_URL
+        value: /opt/render/project/src/backend/api/database.db
+      - key: PYTHON_PATH
+        value: /opt/render/project/src/backend/python
+    healthCheckPath: /health
+
+  # Python Runtime (included in Node.js service)
+  # Render provides Python by default, no separate service needed
